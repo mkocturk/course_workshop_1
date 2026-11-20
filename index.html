@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terraform Ödev</title>
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #7b42bc;   /* Terraform moru */
+      --accent2: #ff9900;  /* AWS turuncusu */
+      --ok: #16a34a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0f1220; --card: #1a1f33; --text: #e5e7eb; --muted: #9ca3af; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--text); padding: 16px;
+    }
+    .card {
+      background: var(--card); border-radius: 16px; padding: 32px;
+      max-width: 560px; width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      border-top: 6px solid var(--accent);
+    }
+    h1 { margin: 0 0 8px; font-size: 1.6rem; }
+    h1 span { color: var(--accent); }
+    h1 b { color: var(--accent2); }
+    p { color: var(--muted); margin: 0 0 20px; }
+    .status {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(22,163,74,.12); color: var(--ok);
+      padding: 6px 12px; border-radius: 999px; font-weight: 600; font-size: .9rem;
+    }
+    .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+    ul { list-style: none; padding: 0; margin: 20px 0; }
+    li { padding: 8px 0; border-bottom: 1px solid rgba(127,127,127,.15); display: flex; justify-content: space-between; gap: 12px; }
+    li span:first-child { color: var(--muted); }
+    a.btn {
+      display: inline-block; margin-top: 8px; text-decoration: none;
+      background: var(--accent); color: #fff; padding: 10px 18px; border-radius: 10px; font-weight: 600;
+    }
+    a.btn:hover { opacity: .9; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1><span>Terraform</span> + <b>AWS</b> Mini Ödev</h1>
+    <p>Bu sayfa EC2 üzerinde Apache ile yayınlanıyor. Dosyalar GitHub'dan user_data ile otomatik çekildi.</p>
+
+    <div class="status">Sunucu çalışıyor</div>
+
+    <ul>
+      <li><span>Region</span><span>eu-central-1 (Frankfurt)</span></li>
+      <li><span>VPC</span><span>10.0.0.0/16</span></li>
+      <li><span>Subnet</span><span>public-subnet-1 (10.0.0.0/24)</span></li>
+      <li><span>Instance</span><span>t3.micro · Amazon Linux 2023</span></li>
+      <li><span>Web Server</span><span>Apache (httpd)</span></li>
+    </ul>
+
+    <a class="btn" href="durum.txt">durum.txt dosyasını gör →</a>
+  </main>
+</body>
+</html>
